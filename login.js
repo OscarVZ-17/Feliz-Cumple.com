@@ -5,7 +5,8 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     const password = document.getElementById("password").value;
     
     const validCredentials = [
-        { username: "oscar", password: "17" },
+        { username: "admin", password: "2004" },
+        { username: "valery", password: "1 año" },
         { username: "tali", password: "1 año" },
         { username: "yuritzy", password: "7" }
     ];
