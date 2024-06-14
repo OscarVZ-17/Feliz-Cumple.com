@@ -8,7 +8,7 @@
 
 body {
   background: #222222;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 html {
@@ -26,7 +26,6 @@ html {
   background: #efeff3;
   z-index: 100;
   transition: all 0.5s ease;
-  overflow: hidden; /* Elimina el scroll de la barra lateral */
 }
 
 .sidebar.close {
@@ -66,6 +65,7 @@ html {
 .sidebar .nav-links {
   height: 100%;
   padding: 30px 0 150px 0;
+  overflow: auto;
 }
 
 .sidebar.close .nav-links {
@@ -321,76 +321,51 @@ html {
   }
 }
 
-/* Writing Section Styles */
-.writing-container {
+.kodfun-galeri {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  overflow: auto;
-  padding: 20px;
-  box-sizing: border-box;
-  background: url(https://cdn.pixabay.com/photo/2024/04/26/18/07/summer-8722384_1280.jpg) center/cover;
+  height: 32.5rem;
+  gap: 1rem;
+  justify-content: center; /* Add this line */
+  overflow-x: auto;
 }
 
-.writing-section {
-  background: rgba(255, 0, 0, 0);
-  padding: 10px;
-  margin: 10px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgb(0 0 0);
-  z-index: 2;
-  max-width: 100%;
-  overflow: auto;
+.kodfun-galeri > div {
+  flex: 1;
+  border-radius: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  transition: all 8s cubic-bezier(.25, 4, 45, 1.4);
 }
 
-.writing-background {
-  background: #b1a7a757;
-  padding: 20px;
-  border: 2px solid #ff000000;
-  border-radius: 10px;
-  color: #000;
-  max-width: 100%;
+.kodfun-galeri > div:hover {
+  flex: 20;
 }
 
-
-.image1,.image2,.image3,.image4,.image5,.image6,.image7,.image8,.image9,
-.image10 {
-  max-width: calc(100% - 10cm); /* Ajusta el ancho máximo restando el margen izquierdo */
-  height: auto;
-  margin-top: 20px; /* Espacio superior entre el texto y las imágenes */
-  margin-left: 0cm; /* Margen izquierdo de 10cm */
-}
-
-.image-gallery {
-  display: flex;
-  flex-direction: column; /* Las imágenes se apilan una debajo de la otra */
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px; /* Espacio superior entre el texto y las imágenes */
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .writing-content textarea {
-    width: 100%; /* Ajustar a 100% en pantallas más pequeñas */
-    height: 40vh;
+/* Media queries para diferentes resoluciones */
+@media only screen and (max-width: 1024px) {
+  .kodfun-galeri {
+    flex-wrap: wrap;
+  }
+  .kodfun-galeri > div {
+    width: 50%;
   }
 }
 
-@media (max-width: 480px) {
-  .writing-content textarea {
-    width: 100%; /* Ajustar a 100% en pantallas más pequeñas */
-    height: 30vh;
+@media only screen and (max-width: 768px) {
+  .kodfun-galeri {
+    flex-direction: column;
   }
-
-  .draggable {
-    max-width: 100%;
+  .kodfun-galeri > div {
+    width: 100%;
   }
+}
 
-  .image1,
-  .image2 {
-    max-width: 100%;
-    margin-left: 0; /* Quitar el margen izquierdo en pantallas pequeñas */
+@media only screen and (max-width: 480px) {
+  .kodfun-galeri {
+    gap: 0.5rem;
+  }
+  .kodfun-galeri > div {
+    border-radius: 0.5rem;
   }
 }
