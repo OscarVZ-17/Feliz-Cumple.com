@@ -353,26 +353,13 @@ html {
   max-width: 100%;
 }
 
-.writing-content textarea {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  font-size: 16px;
-  box-shadow: 0 2px 4px rgb(244 243 243 / 70%);
-  background-color: #58585875; /* Cambia a color sólido */
-  color: #fffffff5;
-  overflow: hidden; /* Ocultar la barra de desplazamiento */
-  resize: none; /* Evitar el cambio de tamaño manual */
-}
 
-.image1,
-.image2 {
+.image1,.image2,.image3,.image4,.image5,.image6,.image7,.image8,.image9,
+.image10 {
   max-width: calc(100% - 10cm); /* Ajusta el ancho máximo restando el margen izquierdo */
   height: auto;
   margin-top: 20px; /* Espacio superior entre el texto y las imágenes */
-  margin-left: 10cm; /* Margen izquierdo de 10cm */
+  margin-left: 0cm; /* Margen izquierdo de 10cm */
 }
 
 .image-gallery {
@@ -407,3 +394,4 @@ html {
     margin-left: 0; /* Quitar el margen izquierdo en pantallas pequeñas */
   }
 }
+
