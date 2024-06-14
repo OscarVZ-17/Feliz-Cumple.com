@@ -1,0 +1,88 @@
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+p {
+    margin: 0 0;
+    position: absolute;
+    font: 16px Verdana;
+    color: #eee;
+    height: 25px;
+    top: calc(100vh - 30px);
+    text-shadow: 0 0 2px white;
+}
+p a {
+    text-decoration: none;
+    color: #aaa;
+}
+span {
+    font-size: 11px;
+}
+p > a:first-of-type {
+    font-size: 20px;
+}
+body {
+    overflow: hidden;
+}
+
+button {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 1em;  /* Cambiado a unidad relativa */
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: fixed;
+    bottom: 2%;  /* Cambiado a porcentaje para ajustar en pantallas de diferentes tamaños */
+    right: 2%;  /* Cambiado a porcentaje para ajustar en pantallas de diferentes tamaños */
+    transition: all 0.3s;
+}
+
+button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+}
+
+/* Media queries para ajustar el tamaño y la posición en pantallas pequeñas */
+@media (max-width: 600px) {
+    button {
+        padding: 0.75em 2em;  /* Ajustar el padding en pantallas pequeñas */
+        font-size: 0.9em;  /* Ajustar el tamaño de la fuente en pantallas pequeñas */
+        bottom: 5%;  /* Mayor margen en pantallas pequeñas */
+        right: 5%;  /* Mayor margen en pantallas pequeñas */
+    }
+}
