@@ -295,38 +295,13 @@ html {
   font-weight: 600;
 }
 
-@media screen and (max-width: 400px) {
-  .sidebar {
-    width: 240px;
-  }
-  .sidebar.close {
-    width: 78px;
-  }
-  .sidebar .profile-details {
-    width: 240px;
-  }
-  .sidebar.close .profile-details {
-    background: none;
-  }
-  .sidebar.close .profile-details {
-    width: 78px;
-  }
-  .home-section {
-    left: 240px;
-    width: calc(100% - 240px);
-  }
-  .sidebar.close ~ .home-section {
-    left: 78px;
-    width: calc(100% - 78px);
-  }
-}
-
 .kodfun-galeri {
   display: flex;
   height: 32.5rem;
   gap: 1rem;
-  justify-content: center; /* Add this line */
+  justify-content: center;
   overflow-x: auto;
+  flex-wrap: wrap;
 }
 
 .kodfun-galeri > div {
@@ -347,7 +322,7 @@ html {
   .kodfun-galeri {
     flex-wrap: wrap;
   }
-  .kodfun-galeri > div {
+  .kodfun-galeri > div{
     width: 50%;
   }
 }
@@ -367,5 +342,16 @@ html {
   }
   .kodfun-galeri > div {
     border-radius: 0.5rem;
+  }
+}
+
+/* Ajustes para pantallas móviles */
+@media only screen and (max-width: 480px) {
+  .kodfun-galeri {
+    flex-direction: column;
+  }
+  .kodfun-galeri > div {
+    width: 100%;
+    height: 200px; /* ajustar el alto de las imágenes */
   }
 }
